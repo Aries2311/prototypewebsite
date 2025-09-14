@@ -1,0 +1,125 @@
+/* assets/css/style.css */
+
+/* You can add custom styles here that are not handled by Tailwind CSS */
+.hero-section {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Mga kulay at spacing para sa About, Skills, at Socials sections */
+#about,
+#skills,
+#socials {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+
+/* Para sa text sa loob ng mga sections (About, Skills, Socials) */
+#about p {
+    color: #cbd5e0;
+}
+
+#skills span {
+    color: rgb(0, 0, 0);
+}
+
+#socials a {
+    color: #000000;
+}
+
+/* Para sa headings ng bawat section */
+#about h2,
+#skills h2,
+#socials h2 {
+    color: #f8fafc;
+}
+
+/* Ito ang code para sa background ng buong page at animation */
+body {
+    background-color: #0d1117;
+    background-image: url('../image/OIP.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Para sa text sa taas ng page (Header at Hero section) */
+header,
+.text-gray-900,
+.text-gray-700 {
+    color: #f8fafc;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes slide-in-from-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Idinagdag ang animation property para sa custom class */
+.animate-slide-in {
+    animation: slide-in-from-top 1s ease-out forwards;
+}
+
+/* Mobile Sidebar Styles */
+#nav-links {
+    transition: right 0.3s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    #nav-links {
+        position: fixed;
+        top: 0;
+        right: -150px; /* Itago sa labas ng screen (negative width) */
+        height: 100%;
+        width: 150px; /* Binago ang width */
+        
+        /* Glassmorphism effect */
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    /* Active state para sa sidebar */
+    #nav-links.active {
+        right: 0;
+    }
+    
+    #nav-links li {
+        margin: 1rem 0;
+    }
+
+    #close-menu {
+        display: block; /* Ipakita ang close button */
+    }
+}

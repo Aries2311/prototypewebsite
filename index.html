@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+    <div id="animation-container" class="absolute inset-0 z-[-1]"></div>
+
+    <header class="bg-blue-600 text-white p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">My Portfolio</a>
+            
+            <button id="hamburger-menu" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            
+            <ul id="nav-links" class="hidden md:flex space-x-4">
+                <span id="close-menu" class="hidden md:hidden absolute top-4 right-4 text-white cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </span>
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-300">About</a></li>
+                <li><a href="#skills" class="hover:text-gray-300">Skills</a></li>
+                <li><a href="#socials" class="hover:text-gray-300">Socials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-center py-2">
+        <div class="md:w-1/2 text-center p-4">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 animate-slide-in">Aries Aquino</h1>
+            <p class="text-lg sm:text-xl text-white animate-slide-in">Hi! I'm so handsome</p>
+        </div>
+
+        <div class="md:w-1/2 p-4 mt-6 md:mt-0">
+            <img src="assets/image/background.png" alt="Aries Aquino" class="w-full h-auto max-h-72 md:w-3/4 lg:w-1/2 mx-auto rounded-full object-contain">
+        </div>
+    </section>
+    
+    <main class="container mx-auto p-4">
+        <section id="about" class="mt-2 text-center p-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-2 animate-slide-in">About Me</h2>
+            <p class="text-gray-700 animate-slide-in">
+                I GOT SO MUCH MONEY, I SHOULD START A BANK. PAPERS RIGHT IN FRONT OF ME DANG ITS HARD TO THINK.
+            </p>
+        </section>
+
+        <section id="skills" class="mt-4 text-center p-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-2 animate-slide-in">Skills</h2>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <span class="bg-gray-200 text-gray-800 text-sm font-medium px-2.5 py-0.5 rounded animate-slide-in">1. Driving Without License</span>
+                <span class="bg-gray-200 text-gray-800 text-sm font-medium px-2.5 py-0.5 rounded animate-slide-in">2. Kamote Rider</span>
+                <span class="bg-gray-200 text-gray-800 text-sm font-medium px-2.5 py-0.5 rounded animate-slide-in">3. Ako Na Yung Mali, Ako Pa Yung Galit</span>
+            </div>
+        </section>
+
+        <section id="socials" class="mt-4 text-center p-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-2 animate-slide-in">Socials</h2>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded animate-slide-in">1. Fake Taxi</a>
+                <a href="#" class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded animate-slide-in">2. Pornpub</a>
+                <a href="#" class="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded animate-slide-in">3. Ms. Stacy</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
