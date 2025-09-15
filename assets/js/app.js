@@ -39,4 +39,33 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // Slick Carousel for videos on mobile
+    $(document).ready(function(){
+        if(window.innerWidth <= 767) {
+            $('.carousel-container').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true
+            });
+        }
+    });
+
+    // Re-initialize carousel on window resize
+    $(window).on('resize', function() {
+        if(window.innerWidth <= 767 && !$('.carousel-container').hasClass('slick-initialized')) {
+            $('.carousel-container').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true
+            });
+        }
+        if(window.innerWidth > 767 && $('.carousel-container').hasClass('slick-initialized')) {
+            $('.carousel-container').slick('unslick');
+        }
+    });
 });
