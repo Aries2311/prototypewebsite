@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Slick Carousel for videos on mobile
-    $(document).ready(function(){
+    // Initialize Slick Carousel on both sections for mobile
+    function initializeCarousels() {
         if(window.innerWidth <= 767) {
             $('.carousel-container').slick({
                 infinite: true,
@@ -51,21 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 dots: true
             });
         }
-    });
+    }
 
-    // Re-initialize carousel on window resize
-    $(window).on('resize', function() {
-        if(window.innerWidth <= 767 && !$('.carousel-container').hasClass('slick-initialized')) {
-            $('.carousel-container').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true
-            });
-        }
+    // Destroy Slick Carousel on desktop
+    function destroyCarousels() {
         if(window.innerWidth > 767 && $('.carousel-container').hasClass('slick-initialized')) {
             $('.carousel-container').slick('unslick');
         }
+    }
+
+    // Initial setup
+    $(document).ready(function(){
+        initializeCarousels();
+    });
+
+    // Re-initialize/destroy on window resize
+    $(window).on('resize', function() {
+        destroyCarousels();
+        initializeCarousels();
     });
 });
