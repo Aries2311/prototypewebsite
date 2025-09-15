@@ -177,12 +177,32 @@ header {
     #close-menu {
         display: block;
     }
+    
+    /* Para maging isang linya ang social icons sa mobile */
+    .socials-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Ayusin ang video display sa mobile */
+    #creations .video-container {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    
+    #creations video {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .rounded-full {
     border-radius: 50% !important;
 }
 
+/* Ayusin ang video display sa desktop */
 #creations .video-container {
     display: flex;
     flex-wrap: nowrap;
